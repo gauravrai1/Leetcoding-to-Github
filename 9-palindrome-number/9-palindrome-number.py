@@ -4,9 +4,11 @@ class Solution:
         itr = int(len(s_list)/2)
         
         isPalindrome = True
-        for i, c in enumerate(s_list[:itr]):
-            last_ele = i+1
-            if s_list[i] != s_list[-last_ele]:
+        if x<0:
+            isPalindrome = False
+        else:    
+            rev = int(str(x)[::-1])
+            if x != rev:
                 isPalindrome = False
         
         return isPalindrome
