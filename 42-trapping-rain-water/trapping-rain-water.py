@@ -6,10 +6,7 @@ class Solution:
         l, r = 0, len(height)-1
         maxL, maxR = height[l], height[r]
 
-        print(maxL, maxR)
-
         while l < r:
-            print(maxL, maxR)
             if maxL < maxR:
                 l += 1
                 maxL = max(height[l],maxL)
