@@ -1,21 +1,25 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = s.lower()
-        s = "".join(ch for ch in s if ch.isalnum())
-        if len(s) == 0:
-            return True
-        middle = len(s) // 2
-        # print("string", s)
-        # print("middle", middle)
-        startptr = 0
-        endptr = -1
-        while startptr < middle:
-            # print(startptr, endptr)
-            # print(s[startptr], s[endptr])
-            if s[startptr] == s[endptr]:
-                startptr += 1
-                endptr -= 1
-                continue
-            else:
+
+        l, r = 0, len(s)-1
+
+        while l < r:
+            while l < r and not self.isAlphaNumeric(s[l]):
+                l += 1
+            while r > l and not self.isAlphaNumeric(s[r]):
+                r -= 1
+            
+            if s[l].lower() != s[r].lower():
                 return False
+            
+            l, r = l+1, r-1
+
         return True
+        
+    def isAlphaNumeric(self, c) -> bool:
+        print("char :", c)
+        if(ord("A") <= ord(c) <= ord("Z") or
+            ord("a") <= ord(c) <= ord("z") or
+            ord("0") <= ord(c) <= ord("9")):
+            return True
+        return False
