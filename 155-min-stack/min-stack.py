@@ -11,10 +11,10 @@ class MinStack:
 
     def pop(self) -> None:
         popv = self.stack.pop()
+        if popv in self.stack:
+            return
         if popv == self.minv[-1]:
             self.minv.pop()
-            if popv in self.stack:
-                self.minv.append(popv)
 
     def top(self) -> int:
         return self.stack[-1]
