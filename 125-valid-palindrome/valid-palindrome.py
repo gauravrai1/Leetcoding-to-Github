@@ -17,8 +17,6 @@ class Solution:
         return True
         
     def isAlphaNumeric(self, c) -> bool:
-        if(ord("A") <= ord(c) <= ord("Z") or
+        return (ord("A") <= ord(c) <= ord("Z") or
             ord("a") <= ord(c) <= ord("z") or
-            ord("0") <= ord(c) <= ord("9")):
-            return True
-        return False
+            ord("0") <= ord(c) <= ord("9"))
