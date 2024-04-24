@@ -23,13 +23,14 @@ class Solution:
             return
 
         # Reverse the second LL
-        rev_second = ListNode(val=second.val, next=None)
-        while second.next:
-            # nxt = second.next
-            # second = second.next
-            # nxt.next = second
-            second = second.next
-            rev_second = ListNode(second.val, rev_second)
+        # rev_second = ListNode(val=second.val, next=None)
+        prev = None
+        while second:
+            next_node = second.next
+            second.next = prev
+            prev = second
+            second = next_node
+        rev_second = prev
 
         # Merge the list
         while head.next and rev_second.next:
