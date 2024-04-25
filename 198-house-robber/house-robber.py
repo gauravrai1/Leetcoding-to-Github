@@ -4,6 +4,7 @@ class Solution:
         if len(nums) == 1:
             return nums[0]
         
+        cache = {}
         maxval = nums[-1]
 
         for i in range(len(nums)-3, -1, -1):
