@@ -14,9 +14,7 @@ class Solution:
             hours = 0
             for pile in piles:
                 hours += math.ceil(pile / k)
-            
-            print("hours", hours, "K", k)
-                        
+                                    
             if hours > h:
                 l = k + 1
             elif hours <= h:
